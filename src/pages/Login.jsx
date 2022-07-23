@@ -1,29 +1,28 @@
-import * as React from "react";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
-import Box from "@mui/material/Box";
-import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setUser } from "../features/authSlice";
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { setUser } from '../features/authSlice';
+import { useDispatch } from 'react-redux';
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //! TODO 👉 email, password => user State
     dispatch(setUser({ email, password }));
-    setEmail("");
-    setPassword("");
-    navigate("/");
+    setEmail('');
+    setPassword('');
+    navigate('/');
   };
 
   return (
@@ -31,9 +30,9 @@ export default function Login() {
       <Box
         sx={{
           marginTop: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
         <Avatar
@@ -83,12 +82,12 @@ export default function Login() {
       </Box>
 
       <Typography variant="body2" color="text.secondary" align="center">
-        {"Copyright © "}
+        {'Copyright © '}
         <Link color="inherit" href="https://www.clarusway.com/">
           Clarusway
-        </Link>{" "}
+        </Link>{' '}
         {new Date().getFullYear()}
-        {"."}
+        {'.'}
       </Typography>
     </Container>
   );

@@ -13,7 +13,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
       //! clear user data(logout olduğunda demek)
-      navihate("login")
+      navihate("login");
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
